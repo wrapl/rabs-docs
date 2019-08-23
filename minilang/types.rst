@@ -91,7 +91,34 @@ Complex strings are written between single quotes ``'`` and can contain the same
    -- Complex strings
    'The value of x is \'{x}\''
    'L:length = {L:length}\n'
-   
+  
+ :mini:`String:length`
+   Returns the length of *String*.
+
+:mini:`String:trim`
+   Returns a copy of *String* with whitespace removed from either end.
+
+:mini:`String[I]`
+   returns the *I*-th byte of *String* as a a string of length 1. Negative indices are taken from the end of the string.
+
+:mini:`String[I, j]`
+   Returns the substring of *String* starting at *I* and ending just before *J*. Negative indices are taken from the end of the string.
+
+:mini:`String1 + String2`
+   Returns the concatenation of *String1* and *String2*.
+
+:mini:`String1 / String2`
+   Returns a list of substrings of *String1* that were seperated by *String2*.
+
+:mini:`String1 % String2`
+   Returns *String1* if it matches the pattern in *String2* (as a regular expression).
+
+:mini:`String1:find(String2)`
+   Returns the first location of *String2* in *String1*.
+
+:mini:`String1:replace(String2, String3)`
+   Returns a copy of *String1* with every occurence of *String2* replaced by *String3*.
+
 Regular Expressions
 -------------------
 
@@ -101,6 +128,21 @@ Regular expressions can be written as ``r"expression"``, where *expression* is a
 
    -- Regular expressions
    r"[0-9]+/[0-9]+/[0-9]+"
+
+:mini:`String / Regex`
+   Returns a list of substrings of *String* that were seperated by *Regex*.
+
+:mini:`String % Regex`
+   Returns *String* if it matches the pattern in *Regex*.
+
+:mini:`String:find(Regex)`
+   Returns the first location of *Regex* in *String*.
+
+:mini:`String1:replace(Regex, String2)`
+   Returns a copy of *String1* with every occurence of *Regex* replaced by *String2*. Substitutions are currently not supported in *String2* but see below for an alternative.
+
+:mini:`String:replace(Regex, Function)`
+   Returns a copy of *String* with every occurence of *Regex* replaced the result of calling *Function* with any groups matched in *Regex*.
 
 Lists
 -----
