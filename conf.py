@@ -70,8 +70,11 @@ author = 'Raja Mukherji'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 
-extensions = [#'sphinxcontrib.fulltoc'
+extensions = [
+	#sphinxcontrib.fulltoc'
 ]
+
+#html_sidebars = { '**': ['localtoc.html', 'globaltoc.html', 'relations.html', 'sourcelink.html', 'searchbox.html'] }
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
