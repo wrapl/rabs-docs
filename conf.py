@@ -100,7 +100,9 @@ html_static_path = ['_static']
 
 master_doc = 'index'
 
-pygments_style = 'autumn'
+
+
+pygments_style = "minilang.MiniStyle"
 
 rst_prolog = """
 .. role:: mini(code)

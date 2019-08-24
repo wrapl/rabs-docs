@@ -1,5 +1,7 @@
 from pygments.lexer import RegexLexer, words, include
 from pygments.token import *
+from pygments.style import Style
+from pygments.token import Keyword, Name, Comment, String, Error, Number, Operator, Generic, Text
 from sphinxcontrib.domaintools import custom_domain
 import re
 
@@ -72,3 +74,20 @@ minilangDomain = custom_domain('MinilangDomain',
         )
     )
 )
+
+class MiniStyle(Style):
+	default_style = ""
+	styles = {
+		Keyword: '#0098dd',
+		Name.Function: '#df631c',
+		Comment: '#a0a1a7',
+		String: '#c5a332',
+		String.Escape: '#823ff1',
+		Error: '#ff0000',
+		Number: '#ce33c0',
+		Operator: '#7a82da'
+	}
+	
+	@staticmethod
+	def title():
+		return 'mini'
